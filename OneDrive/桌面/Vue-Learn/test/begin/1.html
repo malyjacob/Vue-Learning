@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Begin</title>
+    <script src="../vue.js"></script>
+    <script defer src="1.js"></script>
+  </head>
+  <body>
+    <!-- example 1 -->
+    <div id="app">{{ message }}</div>
+
+    <!-- example 2 -->
+    <div id="app-2">
+      <span v-bind:title="message">
+        Please check the prompt here after several seconds that mouse is over
+        it.
+      </span>
+    </div>
+
+    <!-- example 3 -->
+    <div id="app-3">
+      <p v-if="seen">You can see me now!</p>
+    </div>
+
+    <!-- example 4 -->
+    <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">{{todo.text}}</li>
+      </ol>
+    </div>
+
+    <!-- example 5 -->
+    <div id="app-5">
+      <p>{{message}}</p>
+      <button v-on:click="reverseMessage">reverse the message</button>
+    </div>
+
+    <!-- example 6 -->
+    <div id="app-6">
+      <p>{{message}}</p>
+      <input type="text" v-model="message" />
+    </div>
+
+    <!-- example 7 -->
+    <div id="app-7">
+      <ol>
+        <!--
+      todo 对象是变量，即其内容可以是动态的。
+      现在我们为每个 todo-item 提供 todo 对象
+      我们也需要为每个组件提供一个“key”，稍后再
+      作详细解释。
+        -->
+        <todo-item
+          v-for="item in groceryList"
+          v-bind:todo="item"
+          v-bind:key="item.id"
+        ></todo-item>
+      </ol>
+    </div>
+  </body>
+</html>
+
+
+
+/* i --> insert mode, press `esc` to go back to the normal mode
+* x --> delete a char at the position of the cursor
+* :wq --> save + exit
+* p --> paste
+* dd --> delete the current row and storage it.
+* h-j-k-l --> move left/down/up/right*
+* i --> insert mode, press `esc` to go back to the normal mode
+* x --> delete a char at the position of the cursor
+* :wq --> save + exit
+* dd --> delete the current row and storage it.
+* p --> paste
+* h-j-k-l --> move left/down/up/right
+* :help --> show relevant help about command line options
+* 
+* 1. various insertions mode
+* a --> insert after the cursor
+* i --> insert before the cursor
+* o --> insert a new line after current line
+* O --> insert anew line before current line
+* cw --> replace the string after the current cursor until the end of a word
+
+* 2. move cursor
+* 0 --> to the top
+* ^ --> to the first position where is not blank string at the current line
+* $ --> to the end the current line
+* g_ --> to the last position where is not blank string at the current line
+* /pattern  --> search the pattern (we can press n to the next one matched)
+* 
+* 3. copy and paste
+* p/P --> paste after current cursor or before current line
+*/
+
+
+
+
